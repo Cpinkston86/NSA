@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NationStateActor</title>
+  <link rel="icon" type="image/png" href="skiddo.png" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+    :root {
+      --bg-color: #0d0d0d;
+      --text-color: #00ff9c;
+      --accent-color: #ff007c;
+      --glitch-color: #ff3cac;
+    }
+
+    body {
+      margin: 0;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: 'Share Tech Mono', monospace;
+      display: flex;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .container {
+      max-width: 800px;
+      width: 100%;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .glitch {
+      position: relative;
+      font-size: 3rem;
+      letter-spacing: 2px;
+      animation: glitch 1.5s infinite;
+    }
+
+    .glitch::before,
+    .glitch::after {
+      content: attr(data-text);
+      position: absolute;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+      color: var(--glitch-color);
+    }
+
+    .glitch::before {
+      animation: glitchTop 1s infinite linear alternate-reverse;
+      top: -2px;
+    }
+
+    .glitch::after {
+      animation: glitchBottom 1s infinite linear alternate-reverse;
+      top: 2px;
+    }
+
+    @keyframes glitchTop {
+      0% { clip: rect(0, 9999px, 0, 0); }
+      20% { clip: rect(0, 9999px, 8px, 0); left: -2px; }
+      40% { clip: rect(0, 9999px, 4px, 0); left: 2px; }
+      60% { clip: rect(0, 9999px, 6px, 0); left: -1px; }
+      80% { clip: rect(0, 9999px, 2px, 0); left: 1px; }
+      100% { clip: rect(0, 9999px, 0, 0); }
+    }
+
+    @keyframes glitchBottom {
+      0% { clip: rect(0, 9999px, 0, 0); }
+      20% { clip: rect(8px, 9999px, 16px, 0); left: 2px; }
+      40% { clip: rect(4px, 9999px, 12px, 0); left: -2px; }
+      60% { clip: rect(6px, 9999px, 10px, 0); left: 1px; }
+      80% { clip: rect(2px, 9999px, 14px, 0); left: -1px; }
+      100% { clip: rect(0, 9999px, 0, 0); }
+    }
+
+    .tagline {
+      font-size: 1.25rem;
+      color: var(--accent-color);
+      margin-top: 0.5rem;
+    }
+
+    main section {
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      border-bottom: 2px solid var(--accent-color);
+      padding-bottom: 0.25rem;
+      margin-bottom: 1rem;
+    }
+
+    .flyer-image {
+      width: 100%;
+      max-height: 400px;
+      object-fit: contain;
+      border: 2px solid var(--accent-color);
+      background-color: #1a1a1a;
+      padding: 10px;
+    }
+
+    .discord-section {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .discord-link {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.75rem 1.5rem;
+      background-color: var(--accent-color);
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+    }
+
+    .discord-link:hover {
+      background-color: #e6006b;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      margin-top: 2rem;
+      border-top: 1px solid #333;
+      padding-top: 1rem;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1 class="glitch" data-text="NationStateActor">NationStateActor</h1>
+      <p class="tagline">Hack The Planet</p>
+    </header>
+
+    <main>
+      <section class="info">
+        <h2>About</h2>
+        <p>
+          NationStateActor is a monthly hacker meetup held in Southern California.
+          Join us every <strong>3rd Friday of the month</strong> to connect, share, and build with fellow infosec professionals, tinkerers, and tech rebels.
+        </p>
+      </section>
+
+      <section class="flyer">
+        <h2>Next Meetup</h2>
+        <h3> The meetups are currently being held at the shakey's in Moreno Valley CA.</h3>
+        <h4> Yo can catch us there at 7pm in the back room by the arcade. </h4>
+        <img src="skiddo.png" alt="NationStateActor" class="flyer-image" />
+      </section>
+
+      <section class="discord-section">
+        <h2>Join the Discord</h2>
+        <p>Stay updated, connect with the crew, and coordinate off-grid ops:</p>
+        <a href="https://discord.gg/dVrmCuVQAK" class="discord-link" target="_blank" rel="noopener noreferrer">
+          Enter the Network
+        </a>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 NationStateActor. All rights reserved.</p>
+    </footer>
+  </div>
+</body>
+</html>
+
